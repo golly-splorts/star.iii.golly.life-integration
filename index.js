@@ -403,7 +403,6 @@
           var icontainerId = "champion-icon-container";
           var icontainer = document.getElementById(icontainerId);
           var svg = document.createElement("object");
-
           svg.setAttribute('type', 'image/svg+xml');
           svg.setAttribute('data', '../img/' + apiResult.teamAbbr.toLowerCase() + '.svg');
           svg.setAttribute('height', iconSize);
@@ -427,9 +426,7 @@
           }
           // This fails pretty often, so try a few times.
           setTimeout(paint, 100,  apiResult.teamColor, iconId);
-          setTimeout(paint, 250,  apiResult.teamColor, iconId);
           setTimeout(paint, 500,  apiResult.teamColor, iconId);
-          setTimeout(paint, 1000, apiResult.teamColor, iconId);
           setTimeout(paint, 1500, apiResult.teamColor, iconId);
 
         } else {
@@ -539,7 +536,6 @@
             }
 
             // Assemble team W-L records
-            console.log(game);
             if (game.hasOwnProperty('team1WinLoss') && game.hasOwnProperty('team2WinLoss')) {
               var wlstr1 = "(" + game.team1WinLoss[0] + "-" + game.team1WinLoss[1] + ")";
               var wlstr2 = "(" + game.team2WinLoss[0] + "-" + game.team2WinLoss[1] + ")";
@@ -814,10 +810,10 @@
         } else if(mode==23) {
 
           ////////////////////////////
-          // Star III Cup Series
+          // Star Cup Series
           // Scheduled
 
-          // Star III Cup has no league, single-column
+          // SCS has no league, single-column
           var leagueContainerElem = document.getElementById('scs-league-waiting-container');
           for (let g in currGamesApiResult) {
             var game = currGamesApiResult[g];
@@ -1111,7 +1107,7 @@
         } else if (mode==33) {
 
           ////////////////////////////
-          // Star III Cup Series
+          // Star Cup Series
           // In progress
 
           // SCS has no league, single-column
